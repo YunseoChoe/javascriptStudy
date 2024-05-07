@@ -86,4 +86,16 @@ function handleTitleClick() {
     title.style.color = "red";
 }
 
+function mouseenter() {
+    console.log("mouse is here!");
+    title.innerText = "Mouse is here!";
+}
+
+function mouseleave() {
+    title.innerText = "Mouse is gone!";
+}
+
 title.addEventListener("click", handleTitleClick); // event listen
+// title.onclick = handleTitleClick;
+title.addEventListener("mouseenter", mouseenter); 
+title.addEventListener("mouseleave", mouseleave);
