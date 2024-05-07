@@ -1,2 +1,2 @@
 # javascriptStudy
-JavaScript 공부
+노마드 코더 JavaScript
