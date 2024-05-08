@@ -95,7 +95,28 @@ function mouseleave() {
     title.innerText = "Mouse is gone!";
 }
 
+function handleWindowResize() {
+    document.body.style.backgroundColor = "tomato";
+}
+
+function handleWindowCopy() {
+    alert("copier!");
+}
+
+function handleWindowOffline() {
+    alert("SOS on WIFI");
+}
+
+function handleWindowOnline() {
+    alert("ALL GOOOD");
+}
+
 title.addEventListener("click", handleTitleClick); // event listen
 // title.onclick = handleTitleClick;
 title.addEventListener("mouseenter", mouseenter); 
 title.addEventListener("mouseleave", mouseleave);
+
+window.addEventListener("resize", handleWindowResize);
+window.addEventListener("copy", handleWindowCopy);
+window.addEventListener("offline", handleWindowOffline);
+window.addEventListener("online", handleWindowOnline);
