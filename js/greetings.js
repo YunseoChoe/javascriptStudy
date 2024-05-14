@@ -36,4 +36,3 @@ else {
     // show the greetings
     paintGreetings(savedUsername);
 }
-

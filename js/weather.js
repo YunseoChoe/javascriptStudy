@@ -9,6 +9,7 @@ function onGeoOk(position) {
         .then(data => {
                 const weather = document.querySelector("#weather span:first-child");
                 const city = document.querySelector("#weather span:last-child");
+                console.log(data);
                 city.innerText = data.name;
                 weather.innerText = data.weather[0].main;
             });
@@ -19,4 +20,4 @@ function onGeoError() {
 }
 
 // User의 위치를 알 수 있음
-navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError); // 각각 성공, 실패

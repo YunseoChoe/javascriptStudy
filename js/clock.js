@@ -3,6 +3,7 @@ const clock = document.querySelector("h2#clock");
 // 매 초마다 새로운 Date object를 만듦 (= 시계)
 function getClock() {
     const data = new Date(); // 현재 시간
+    // console.log(data);
     const hours = String(data.getHours()).padStart(2, "0");
     const minutes = String(data.getMinutes()).padStart(2, "0");
     const seconds = String(data.getSeconds()).padStart(2, "0");

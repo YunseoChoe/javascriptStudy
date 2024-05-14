@@ -11,14 +11,14 @@ function saveToDos() {
 }
 
 function deleteToDo(event) {
-    const li = event.target.parentElement; // 어디에 click이 된 건지 확인 (target = button, parentElement = li)
+    const li = event.target.parentElement; // 클릭된 button의 부모 요소 찾기 (target = button, parentElement = li)
 
     li.remove();
     toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
     saveToDos();
 }
 
-function painToDo(newTodo) {
+function paintToDo(newTodo) {
     const li = document.createElement("li");
     li.id = newTodo.id;
     const span = document.createElement("span");
@@ -40,17 +40,21 @@ function handleToDoSubmit(event) {
         text: newTodo,
         id: Date.now(),
     };
-    toDos.push(newTodoObj);
-    painToDo(newTodoObj);
+    toDos.push(newTodoObj); // 배열에 추가
+    console.log(toDos);
+    paintToDo(newTodoObj); 
     saveToDos();
 }
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
+// 페이지를 로드해도 없어지지 않음
 if (savedToDos !== null) {
     // 문자열을 배열로 변환
     const parsedToDos = JSON.parse(savedToDos);
+    console.log(toDos);
     toDos = parsedToDos; // Array 덮어쓰기 가능
-    parsedToDos.forEach.forEach 
+    console.log(toDos);
+    parsedToDos.forEach(paintToDo); // 각 요소에 대해서 쓰기
 }
